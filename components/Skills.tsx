@@ -7,7 +7,9 @@ const LANGUAGES = ["C++", "JavaScript", "TypeScript", "Rust"];
 const TOOLS = [
   "React",
   "Next.js",
+  "Express",
   "Tailwind CSS",
+  "MongoDB",
   "PostgreSQL",
   "Prisma",
   "WebSockets",
@@ -115,21 +117,28 @@ function SkillGroup({
   reduced,
 }: SkillGroupProps) {
   return (
-    <div className="w-full flex flex-col items-center gap-5">
+    <div className="w-full flex flex-col items-center gap-6">
       <motion.h3
-        className="
-          text-base sm:text-lg
-          font-semibold
-          tracking-[0.2em]
-          uppercase
-          text-white/50
-          font-mono
-          text-center
-        "
         variants={fadeUp(baseDelay)}
         initial={reduced ? "show" : "hidden"}
         whileInView="show"
         viewport={{ once: true }}
+        className="
+          inline-flex items-center justify-center
+          rounded-xl
+          border border-white/15
+          bg-white/[0.03]
+          px-6 py-3
+          text-sm sm:text-base
+          font-semibold
+          tracking-[0.2em]
+          uppercase
+          text-white
+          font-mono
+          text-center
+          shadow-[0_0_20px_rgba(255,255,255,0.03)]
+          backdrop-blur-sm
+        "
       >
         {title}
       </motion.h3>
@@ -169,11 +178,7 @@ function SkillGroup({
   );
 }
 
-function AnimatedBorderTitle({
-  reduced,
-}: {
-  reduced: boolean;
-}) {
+function AnimatedBorderTitle({ reduced }: { reduced: boolean }) {
   return (
     <motion.div
       variants={fadeUp(0)}
