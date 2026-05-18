@@ -169,10 +169,7 @@ export default function Contact() {
           whileInView="show"
           viewport={{ once: true }}
         >
-          Whether you have a product to ship, a creative vision to bring to
-          life, or just want to explore an idea together — I&apos;d love to
-          hear from you. Drop me a message and let&apos;s build something worth
-          remembering.
+          I build modern web applications, scalable backend systems, cloud infrastructure, and Web3 products. Whether you need a polished landing page, a full-stack platform, DevOps automation, or blockchain integration, I can help bring your ideas to life.
         </motion.p>
 
         <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
