@@ -30,7 +30,19 @@ export default function Hero() {
   const reduced = useReducedMotion() ?? false;
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-black px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section
+      className="
+        relative
+        min-h-screen
+        flex
+        items-center
+        justify-center
+        bg-black
+        px-4 sm:px-6 lg:px-8
+        overflow-hidden
+        pt-4 sm:pt-0
+      "
+    >
       <div className="absolute inset-0 bg-black/40" />
 
       <motion.div
@@ -39,6 +51,7 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
       >
+        {/* Heading */}
         <motion.h1
           variants={itemVariants}
           className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-4"
@@ -46,10 +59,10 @@ export default function Hero() {
           Hi, I&apos;m Ansh
         </motion.h1>
 
-        {/* Smaller video that fits directly under the heading */}
+        {/* Video */}
         <motion.div
           variants={itemVariants}
-          className="w-full max-w-47.5 sm:max-w-45 md:max-w-65 lg:max-w-97.5 mx-auto mb-3"
+          className="w-full max-w-[190px] sm:max-w-[180px] md:max-w-[260px] lg:max-w-[390px] mx-auto mb-3"
         >
           <div className="relative overflow-hidden rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm shadow-xl">
             <video
@@ -64,6 +77,7 @@ export default function Hero() {
           </div>
         </motion.div>
 
+        {/* Typing Text */}
         <motion.div
           variants={itemVariants}
           className="text-xl sm:text-2xl lg:text-3xl font-semibold leading-tight mb-2"
@@ -75,7 +89,7 @@ export default function Hero() {
           }}
         >
           {reduced ? (
-            "Full Stack Developer • DevOps Engineer • Solana Rust Engineer"
+            "Full Stack Developer • DevOps Architect • Solana Rust Engineer"
           ) : (
             <TypeAnimation
               sequence={[
@@ -96,6 +110,7 @@ export default function Hero() {
           )}
         </motion.div>
 
+        {/* Description */}
         <motion.p
           variants={itemVariants}
           className="text-base sm:text-lg lg:text-xl text-zinc-400 leading-relaxed max-w-3xl mx-auto"
@@ -103,17 +118,6 @@ export default function Hero() {
           From modern SaaS platforms to decentralized applications, I turn ideas
           into production-ready products.
         </motion.p>
-        {/* GitHub Contribution Snake Animation
-<motion.div
-  variants={itemVariants}
-  className="w-full max-w-[320px] sm:max-w-[420px] md:max-w-[520px] lg:max-w-[640px] mx-auto"
->
-  <img
-    src="https://raw.githubusercontent.com/sahayanshuman2005/sahayanshuman2005/output/github-contribution-grid-snake-dark.svg"
-    alt="GitHub Contribution Snake Animation"
-    className="w-full h-auto"
-  />
-</motion.div> */}
       </motion.div>
     </section>
   );
