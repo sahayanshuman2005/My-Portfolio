@@ -18,8 +18,9 @@ const TOOLS = [
   "Docker",
   "Kubernetes",
   "CI/CD",
-  "Git",
-  "GitHub",
+  "Git & Github",
+  "Kafka",
+  "Redis",
   "Prometheus",
   "Grafana",
 ];
@@ -127,7 +128,7 @@ function SkillGroup({
           inline-flex items-center justify-center
           rounded-xl
           border border-white/15
-          bg-white/[0.03]
+          bg-white/3
           px-6 py-3
           text-sm sm:text-base
           font-semibold
