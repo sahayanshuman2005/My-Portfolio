@@ -51,15 +51,12 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
       >
-        {/* Heading */}
         <motion.h1
           variants={itemVariants}
           className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-4"
         >
           Hi, I&apos;m Ansh
         </motion.h1>
-
-        {/* Video */}
         <motion.div
           variants={itemVariants}
           className="w-full max-w-[190px] sm:max-w-[180px] md:max-w-[260px] lg:max-w-[390px] mx-auto mb-3"
@@ -76,8 +73,6 @@ export default function Hero() {
             />
           </div>
         </motion.div>
-
-        {/* Typing Text */}
         <motion.div
           variants={itemVariants}
           className="text-xl sm:text-2xl lg:text-3xl font-semibold leading-tight mb-2"
@@ -109,8 +104,6 @@ export default function Hero() {
             />
           )}
         </motion.div>
-
-        {/* Description */}
         <motion.p
           variants={itemVariants}
           className="text-base sm:text-lg lg:text-xl text-zinc-400 leading-relaxed max-w-3xl mx-auto"
