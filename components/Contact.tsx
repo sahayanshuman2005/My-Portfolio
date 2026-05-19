@@ -1,8 +1,8 @@
 "use client";
-
+ 
 import { type Variants, motion, useReducedMotion } from "framer-motion";
 import { Mail } from "lucide-react";
-
+ 
 const fadeUp = (delay = 0): Variants => ({
   hidden: { opacity: 0, y: 24 },
   show: {
@@ -15,7 +15,7 @@ const fadeUp = (delay = 0): Variants => ({
     },
   },
 });
-
+ 
 const scaleIn = (delay = 0): Variants => ({
   hidden: { opacity: 0, scale: 0.88 },
   show: {
@@ -28,36 +28,7 @@ const scaleIn = (delay = 0): Variants => ({
     },
   },
 });
-
-const floatVariant: Variants = {
-  animate: {
-    y: [0, -18, 0] as const,
-    scale: [1, 1.06, 1] as const,
-    opacity: [0.06, 0.1, 0.06] as const,
-    transition: {
-      duration: 7,
-      repeat: Infinity,
-      ease: "easeInOut",
-    },
-  },
-};
-
-const borderGlow: Variants = {
-  hidden: {
-    opacity: 0,
-    boxShadow: "0 0 0px rgba(255,255,255,0)",
-  },
-  show: {
-    opacity: 1,
-    boxShadow: "0 0 60px 1px rgba(255,255,255,0.06)",
-    transition: {
-      duration: 1.4,
-      delay: 0.2,
-      ease: "easeOut",
-    },
-  },
-};
-
+ 
 interface TypewriterProps {
   text: string;
   className?: string;
@@ -65,7 +36,7 @@ interface TypewriterProps {
   letterDelay?: number;
   reduced: boolean;
 }
-
+ 
 function Typewriter({
   text,
   className = "",
@@ -76,7 +47,7 @@ function Typewriter({
   if (reduced) {
     return <span className={className}>{text}</span>;
   }
-
+ 
   return (
     <>
       {text.split("").map((char, i) => (
@@ -101,37 +72,25 @@ function Typewriter({
     </>
   );
 }
-
+ 
 export default function Contact() {
   const reduced = useReducedMotion() ?? false;
-
+ 
   const line1 = "Available for Freelance";
   const line2 = "& Collaborations";
-
+ 
   const line2Delay = 0.1 + line1.length * 0.035 + 0.12;
-
+ 
   const twitterDMUrl =
     "https://twitter.com/messages/compose?recipient_id=1812063256531374080&text=Hi%20Ansh%2C%20I%20came%20across%20your%20portfolio%20and%20I%27d%20love%20to%20collaborate%20with%20you!";
-
+ 
   const gmailComposeUrl =
     "https://mail.google.com/mail/?view=cm&fs=1&to=sahayanshuman421@gmail.com&su=Freelance%20needed!&body=Hi%20Ansh%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20I%27m%20interested%20in%20working%20with%20you.%0A%0A%0ABest%20regards%2C%0A";
-
+ 
   return (
-    <section className="relative min-h-screen w-full bg-black flex items-center justify-center overflow-hidden px-4 sm:px-6 py-24">
-      <motion.div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_60%,rgba(255,255,255,0.07)_0%,transparent_70%)]"
-        variants={floatVariant}
-        animate={reduced ? undefined : "animate"}
-      />
-
-      <motion.div
-        className="relative z-10 flex flex-col items-center text-center max-w-2xl w-full gap-8 rounded-2xl"
-        variants={borderGlow}
-        initial={reduced ? "show" : "hidden"}
-        whileInView="show"
-        viewport={{ once: true, amount: 0.3 }}
-      >
+    <section className="relative w-full bg-black py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <div className="relative z-10 max-w-2xl mx-auto flex flex-col items-center text-center gap-8">
+ 
         <motion.p
           className="text-xs tracking-[0.3em] uppercase text-white/40 font-mono"
           variants={fadeUp(0)}
@@ -141,9 +100,9 @@ export default function Contact() {
         >
           Let&apos;s work together
         </motion.p>
-
+ 
         <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white leading-tight tracking-tight max-w-full">
-          <span className="block wrap-break-word">
+          <span className="block">
             <Typewriter
               text={line1}
               startDelay={0.1}
@@ -151,8 +110,7 @@ export default function Contact() {
               reduced={reduced}
             />
           </span>
-
-          <span className="block text-white/60 wrap-break-word">
+          <span className="block text-white/60">
             <Typewriter
               text={line2}
               startDelay={line2Delay}
@@ -161,7 +119,7 @@ export default function Contact() {
             />
           </span>
         </h2>
-
+ 
         <motion.p
           className="text-white/50 text-base sm:text-lg leading-relaxed max-w-lg"
           variants={fadeUp(0.3)}
@@ -169,10 +127,14 @@ export default function Contact() {
           whileInView="show"
           viewport={{ once: true }}
         >
-          I build modern web applications, scalable backend systems, cloud infrastructure, and Web3 products. Whether you need a polished landing page, a full-stack platform, DevOps automation, or blockchain integration, I can help bring your ideas to life.
+          I build modern web applications, scalable backend systems, cloud
+          infrastructure, and Web3 products. Whether you need a polished
+          landing page, a full-stack platform, DevOps automation, or blockchain
+          integration, I can help bring your ideas to life.
         </motion.p>
-
+ 
         <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+ 
           <motion.a
             href={twitterDMUrl}
             target="_blank"
@@ -186,16 +148,22 @@ export default function Contact() {
                 ? undefined
                 : {
                     scale: 1.06,
-                    boxShadow: "0 0 28px rgba(255,255,255,0.4)",
+                    boxShadow: "0 0 28px rgba(255,255,255,0.4)", // ← glow on hover
                   }
             }
             whileTap={reduced ? undefined : { scale: 0.97 }}
-            className="group inline-flex items-center justify-center gap-2 bg-white text-black rounded-full px-7 py-3.5 text-sm font-semibold tracking-wide cursor-pointer w-full sm:w-auto"
+            className="
+              inline-flex items-center justify-center gap-2
+              bg-white text-black
+              rounded-full px-7 py-3.5
+              text-sm font-semibold tracking-wide
+              cursor-pointer w-full sm:w-auto
+            "
           >
             <span className="text-sm font-bold">𝕏</span>
             Message on X
           </motion.a>
-
+ 
           <motion.a
             href={gmailComposeUrl}
             target="_blank"
@@ -209,11 +177,17 @@ export default function Contact() {
                 ? undefined
                 : {
                     scale: 1.06,
-                    boxShadow: "0 0 28px rgba(255,255,255,0.4)",
+                    boxShadow: "0 0 28px rgba(255,255,255,0.4)", // ← glow on hover
                   }
             }
             whileTap={reduced ? undefined : { scale: 0.97 }}
-            className="group inline-flex items-center justify-center gap-2 bg-white text-black rounded-full px-7 py-3.5 text-sm font-semibold tracking-wide cursor-pointer w-full sm:w-auto"
+            className="
+              inline-flex items-center justify-center gap-2
+              bg-white text-black
+              rounded-full px-7 py-3.5
+              text-sm font-semibold tracking-wide
+              cursor-pointer w-full sm:w-auto
+            "
           >
             <Mail
               size={16}
@@ -223,7 +197,6 @@ export default function Contact() {
             Send an Email
           </motion.a>
         </div>
-
         <motion.p
           className="text-white/20 text-xs font-mono tracking-widest mt-4"
           variants={fadeUp(0.75)}
@@ -233,7 +206,8 @@ export default function Contact() {
         >
           Usually responds within 24 hours
         </motion.p>
-      </motion.div>
+ 
+      </div>
     </section>
   );
 }
