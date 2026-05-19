@@ -206,7 +206,8 @@ export default function Contact() {
         >
           Usually responds within 24 hours
         </motion.p>
- 
+        <div style={{paddingBottom:".1px"}}>
+        </div>
       </div>
     </section>
   );
