@@ -245,8 +245,8 @@ export default function Skills() {
     <section
       className="
         relative w-full bg-black
-        py-20 px-4 sm:px-6 lg:px-8
-        overflow-hidden
+        py-1 px-4 sm:px-6 lg:px-8
+        overflow-hidden 
       "
     >
       <motion.div
