@@ -19,10 +19,10 @@ const TOOLS = [
   "Kubernetes",
   "CI/CD",
   "Git & Github",
-  "Kafka",
-  "Redis",
-  "Prometheus",
-  "Grafana",
+  // "Kafka",
+  // "Redis",
+  // "Prometheus",
+  // "Grafana",
 ];
 
 const fadeUp = (delay = 0): Variants => ({

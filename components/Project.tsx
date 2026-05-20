@@ -45,9 +45,9 @@ const DEFAULT_PROJECTS: ProjectCardProps[] = [
     liveUrl: "https://saasify-frontend-next.vercel.app/",
   },
   {
-    title: "LiveCanvas",
+    title: "SketchMate",
     description:
-      "Built a real-time collaborative whiteboard inspired by Excalidraw that allows multiple users to draw, edit, and interact on the same canvas simultaneously. Developed with Next.js, React, TypeScript, and Tailwind CSS for a fast and responsive frontend experience. Implemented low-latency synchronization using WebSockets to broadcast drawing updates in real time, while PostgreSQL was used to persist boards, shapes, and user sessions. Organized the codebase as a monorepo with Turborepo, enabling shared packages for UI components, canvas logic, and backend utilities across the application.",
+      "Developed a real-time collaborative whiteboard using Next.js, React, TypeScript, and Tailwind CSS. Enabled low-latency multi-user drawing with WebSockets, persisted board data in PostgreSQL, and structured the codebase as a monorepo with Turborepo.",
     image: "/projects/devops-dashboard.jpg",
     techStack: [
       "Next.js",
@@ -55,26 +55,24 @@ const DEFAULT_PROJECTS: ProjectCardProps[] = [
       "Websocket",
       "TypeScript",
       "Express",
-      "Zod",
       "PostgreSQL",
     ],
-    githubUrl: "https://github.com/sahayanshuman2005/LiveCanvas.git",
+    githubUrl: "https://github.com/sahayanshuman2005/SketchMate.git",
     liveUrl: "https://devops-dashboard.vercel.app",
   },
   {
-    title: "Full-Stack SaaS Platform",
+    title: "Youtube University",
     description:
-      "coming soon.....",
+      "Built a full-stack e-learning platform where instructors can create and sell courses, and students can purchase, access, and track their learning progress. Developed using the MERN stack (MongoDB, Express.js, React, and Node.js) with Tailwind CSS to deliver a responsive and intuitive user experience.",
     image: "/projects/saas-platform.jpg",
     techStack: [
-      "Next.js",
-      "TypeScript",
-      "Prisma",
-      "PostgreSQL",
+      "MongoDB",
+      "Express",
+      "React",
+      "Node.js",
       "Tailwind CSS",
-      "AWS",
     ],
-    githubUrl: "https://github.com/yourusername/saas-platform",
+    githubUrl: "https://github.com/sahayanshuman2005/Youtube-University.git",
     liveUrl: "https://saas-platform.vercel.app",
   },
 ];
