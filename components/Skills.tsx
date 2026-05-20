@@ -8,6 +8,7 @@ const TOOLS = [
   "React",
   "Next.js",
   "Express",
+  "Node.js",
   "Tailwind CSS",
   "MongoDB",
   "PostgreSQL",
@@ -19,10 +20,10 @@ const TOOLS = [
   "Kubernetes",
   "CI/CD",
   "Git & Github",
-  // "Kafka",
-  // "Redis",
-  // "Prometheus",
-  // "Grafana",
+  "Kafka",
+  "Redis",
+  "Prometheus",
+  "Grafana",
 ];
 
 const fadeUp = (delay = 0): Variants => ({
