@@ -45,25 +45,26 @@ const DEFAULT_PROJECTS: ProjectCardProps[] = [
     liveUrl: "https://saasify-frontend-next.vercel.app/",
   },
   {
-    title: "DevOps Dashboard",
+    title: "LiveCanvas",
     description:
-      "Real-time infrastructure monitoring dashboard with Prometheus metrics, Grafana-inspired charts, Kubernetes cluster visibility, and CI/CD pipeline status tracking.",
+      "Built a real-time collaborative whiteboard inspired by Excalidraw that allows multiple users to draw, edit, and interact on the same canvas simultaneously. Developed with Next.js, React, TypeScript, and Tailwind CSS for a fast and responsive frontend experience. Implemented low-latency synchronization using WebSockets to broadcast drawing updates in real time, while PostgreSQL was used to persist boards, shapes, and user sessions. Organized the codebase as a monorepo with Turborepo, enabling shared packages for UI components, canvas logic, and backend utilities across the application.",
     image: "/projects/devops-dashboard.jpg",
     techStack: [
       "Next.js",
-      "Prometheus",
-      "Grafana",
-      "Docker",
-      "Kubernetes",
+      "TailwindCSS",
+      "Websocket",
+      "TypeScript",
+      "Express",
+      "Zod",
       "PostgreSQL",
     ],
-    githubUrl: "https://github.com/yourusername/devops-dashboard",
+    githubUrl: "https://github.com/sahayanshuman2005/LiveCanvas.git",
     liveUrl: "https://devops-dashboard.vercel.app",
   },
   {
     title: "Full-Stack SaaS Platform",
     description:
-      "End-to-end multi-tenant SaaS boilerplate with auth, billing, team management, and a React dashboard. Built for rapid product launches.",
+      "coming soon.....",
     image: "/projects/saas-platform.jpg",
     techStack: [
       "Next.js",
@@ -75,40 +76,6 @@ const DEFAULT_PROJECTS: ProjectCardProps[] = [
     ],
     githubUrl: "https://github.com/yourusername/saas-platform",
     liveUrl: "https://saas-platform.vercel.app",
-  },
-  {
-    title: "Real-Time Chat App",
-    description:
-      "Scalable WebSocket-powered chat application with rooms, direct messages, file sharing, and end-to-end encryption. Deployed on AWS with Docker.",
-    image: "/projects/chat-app.jpg",
-    techStack: ["Node.js", "WebSockets", "React", "MongoDB", "Docker", "AWS"],
-    githubUrl: "https://github.com/yourusername/chat-app",
-    liveUrl: "https://chat-app.vercel.app",
-  },
-  {
-    title: "Rust CLI Tool",
-    description:
-      "High-performance command-line utility written in Rust for batch processing large datasets. 10× faster than the Python equivalent with a fraction of the memory footprint.",
-    image: "/projects/rust-cli.jpg",
-    techStack: ["Rust", "CLI", "GitHub Actions", "CI/CD"],
-    githubUrl: "https://github.com/yourusername/rust-cli",
-    liveUrl: "https://github.com/yourusername/rust-cli",
-  },
-  {
-    title: "dApp Token Launchpad",
-    description:
-      "A Solana token launchpad enabling fair-launch token sales with vesting schedules, whitelist management, and on-chain governance via Rust smart contracts.",
-    image: "/projects/token-launchpad.jpg",
-    techStack: [
-      "Rust",
-      "Anchor",
-      "Solana",
-      "React",
-      "TypeScript",
-      "Prisma",
-    ],
-    githubUrl: "https://github.com/yourusername/token-launchpad",
-    liveUrl: "https://token-launchpad.vercel.app",
   },
 ];
 
