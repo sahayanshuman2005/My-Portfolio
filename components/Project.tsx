@@ -63,7 +63,53 @@ const DEFAULT_PROJECTS: ProjectCardProps[] = [
   {
     title: "Youtube University",
     description:
-      "Built a full-stack e-learning platform where instructors can create and sell courses, and students can purchase, access, and track their learning progress. Developed using the MERN stack (MongoDB, Express.js, React, and Node.js) with Tailwind CSS to deliver a responsive and intuitive user experience.",
+      "Built a full-stack e-learning platform where instructors can create and sell courses, and students can purchase, access, and track their learning progress.",
+    image: "/projects/saas-platform.jpg",
+    techStack: [
+      "MongoDB",
+      "Express",
+      "React",
+      "Node.js",
+      "Tailwind CSS",
+    ],
+    githubUrl: "https://github.com/sahayanshuman2005/Youtube-University.git",
+    liveUrl: "https://saas-platform.vercel.app",
+  },
+
+  {
+    title: "BuddyBase",
+    description:
+      "Built a virtual collaboration platform where users can join interactive spaces, move as avatars, and connect through proximity-based video and chat, creating an immersive online environment for meetings, networking, and casual hangouts.",
+    image: "/projects/saas-platform.jpg",
+    techStack: [
+      "MongoDB",
+      "Express",
+      "React",
+      "Node.js",
+      "Tailwind CSS",
+    ],
+    githubUrl: "https://github.com/sahayanshuman2005/Youtube-University.git",
+    liveUrl: "https://saas-platform.vercel.app",
+  },
+  {
+    title: "Nova",
+    description:
+      "Built an AI-powered website builder that transforms natural language prompts into fully functional web applications. Developed with modern full-stack technologies to generate responsive interfaces, reusable components, and production-ready code in real time.",
+    image: "/projects/saas-platform.jpg",
+    techStack: [
+      "MongoDB",
+      "Express",
+      "React",
+      "Node.js",
+      "Tailwind CSS",
+    ],
+    githubUrl: "https://github.com/sahayanshuman2005/Youtube-University.git",
+    liveUrl: "https://saas-platform.vercel.app",
+  },
+  {
+    title: "ChitChat",
+    description:
+      "Built a real-time chat application that enables users to send instant messages, create conversations, and communicate seamlessly.",
     image: "/projects/saas-platform.jpg",
     techStack: [
       "MongoDB",
@@ -221,7 +267,7 @@ export default function Projects() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 16, scale: 0.95 }}
             transition={{ duration: 0.25 }}
-            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] flex items-center gap-2 bg-white text-black text-xs font-semibold px-4 py-2 rounded-full shadow-xl pointer-events-none"
+            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-100 flex items-center gap-2 bg-white text-black text-xs font-semibold px-4 py-2 rounded-full shadow-xl pointer-events-none"
           >
             ↑ {toast}
           </motion.div>
