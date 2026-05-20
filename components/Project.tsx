@@ -1,7 +1,12 @@
 "use client";
- 
+
 import { useEffect, useState } from "react";
-import { motion, type Variants, useReducedMotion } from "framer-motion";
+import {
+  motion,
+  type Variants,
+  useReducedMotion,
+  AnimatePresence,
+} from "framer-motion";
 import {
   DndContext,
   closestCenter,
@@ -20,36 +25,56 @@ import {
   rectSortingStrategy,
   sortableKeyboardCoordinates,
 } from "@dnd-kit/sortable";
- 
+
 import ProjectCard, { type ProjectCardProps } from "./ProjectCard";
- 
+
 const DEFAULT_PROJECTS: ProjectCardProps[] = [
   {
     title: "Saasify",
     description:
       "Saasify is a modern, responsive SaaS landing page built with Next.js, TypeScript, and Tailwind CSS. It features smooth animations with Framer Motion, dynamic pricing sections, testimonials, and reusable components. Optimized for performance, scalability, and clean UI design.",
     image: "/saasify.png",
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "React", "Framer-motion"],
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "React",
+      "Framer-motion",
+    ],
     githubUrl: "https://github.com/sahayanshuman2005/Saasify-frontend",
-    liveUrl:   "https://saasify-frontend-next.vercel.app/",
+    liveUrl: "https://saasify-frontend-next.vercel.app/",
   },
   {
     title: "DevOps Dashboard",
     description:
       "Real-time infrastructure monitoring dashboard with Prometheus metrics, Grafana-inspired charts, Kubernetes cluster visibility, and CI/CD pipeline status tracking.",
     image: "/projects/devops-dashboard.jpg",
-    techStack: ["Next.js", "Prometheus", "Grafana", "Docker", "Kubernetes", "PostgreSQL"],
+    techStack: [
+      "Next.js",
+      "Prometheus",
+      "Grafana",
+      "Docker",
+      "Kubernetes",
+      "PostgreSQL",
+    ],
     githubUrl: "https://github.com/yourusername/devops-dashboard",
-    liveUrl:   "https://devops-dashboard.vercel.app",
+    liveUrl: "https://devops-dashboard.vercel.app",
   },
   {
     title: "Full-Stack SaaS Platform",
     description:
       "End-to-end multi-tenant SaaS boilerplate with auth, billing, team management, and a React dashboard. Built for rapid product launches.",
     image: "/projects/saas-platform.jpg",
-    techStack: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Tailwind CSS", "AWS"],
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Prisma",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "AWS",
+    ],
     githubUrl: "https://github.com/yourusername/saas-platform",
-    liveUrl:   "https://saas-platform.vercel.app",
+    liveUrl: "https://saas-platform.vercel.app",
   },
   {
     title: "Real-Time Chat App",
@@ -58,7 +83,7 @@ const DEFAULT_PROJECTS: ProjectCardProps[] = [
     image: "/projects/chat-app.jpg",
     techStack: ["Node.js", "WebSockets", "React", "MongoDB", "Docker", "AWS"],
     githubUrl: "https://github.com/yourusername/chat-app",
-    liveUrl:   "https://chat-app.vercel.app",
+    liveUrl: "https://chat-app.vercel.app",
   },
   {
     title: "Rust CLI Tool",
@@ -67,39 +92,41 @@ const DEFAULT_PROJECTS: ProjectCardProps[] = [
     image: "/projects/rust-cli.jpg",
     techStack: ["Rust", "CLI", "GitHub Actions", "CI/CD"],
     githubUrl: "https://github.com/yourusername/rust-cli",
-    liveUrl:   "https://github.com/yourusername/rust-cli",
+    liveUrl: "https://github.com/yourusername/rust-cli",
   },
   {
     title: "dApp Token Launchpad",
     description:
       "A Solana token launchpad enabling fair-launch token sales with vesting schedules, whitelist management, and on-chain governance via Rust smart contracts.",
     image: "/projects/token-launchpad.jpg",
-    techStack: ["Rust", "Anchor", "Solana", "React", "TypeScript", "Prisma"],
+    techStack: [
+      "Rust",
+      "Anchor",
+      "Solana",
+      "React",
+      "TypeScript",
+      "Prisma",
+    ],
     githubUrl: "https://github.com/yourusername/token-launchpad",
-    liveUrl:   "https://token-launchpad.vercel.app",
+    liveUrl: "https://token-launchpad.vercel.app",
   },
 ];
- 
+
 const LS_KEY = "portfolio_projects_order";
- 
-const fadeUp = (delay = 0): Variants => ({
-  hidden:  { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] as const },
-  },
-});
- 
+
 function loadOrder(): ProjectCardProps[] {
   if (typeof window === "undefined") return DEFAULT_PROJECTS;
+
   try {
     const raw = localStorage.getItem(LS_KEY);
     if (!raw) return DEFAULT_PROJECTS;
+
     const titles: string[] = JSON.parse(raw);
+
     const reordered = titles
       .map((t) => DEFAULT_PROJECTS.find((p) => p.title === t))
       .filter(Boolean) as ProjectCardProps[];
+
     return reordered.length === DEFAULT_PROJECTS.length
       ? reordered
       : DEFAULT_PROJECTS;
@@ -107,25 +134,41 @@ function loadOrder(): ProjectCardProps[] {
     return DEFAULT_PROJECTS;
   }
 }
- 
+
 function saveOrder(projects: ProjectCardProps[]) {
-  localStorage.setItem(LS_KEY, JSON.stringify(projects.map((p) => p.title)));
+  localStorage.setItem(
+    LS_KEY,
+    JSON.stringify(projects.map((p) => p.title))
+  );
 }
- 
+
+const fadeUp = (delay = 0): Variants => ({
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      delay,
+      ease: [0.22, 1, 0.36, 1] as const,
+    },
+  },
+});
+
 export default function Projects() {
   const reduced = useReducedMotion() ?? false;
- 
-  const [projects,    setProjects]    = useState<ProjectCardProps[]>(DEFAULT_PROJECTS);
-  const [activeId,    setActiveId]    = useState<string | null>(null);
+
+  const [projects, setProjects] =
+    useState<ProjectCardProps[]>(DEFAULT_PROJECTS);
+  const [activeId, setActiveId] = useState<string | null>(null);
   const [isReordered, setIsReordered] = useState(false);
- 
+  const [toast, setToast] = useState<string | null>(null);
+
   useEffect(() => {
-    const saved = loadOrder();
-    setProjects(saved);
-    const raw = localStorage.getItem(LS_KEY);
-    setIsReordered(!!raw);
+    setProjects(loadOrder());
+    setIsReordered(!!localStorage.getItem(LS_KEY));
   }, []);
- 
+
   const sensors = useSensors(
     useSensor(PointerSensor, {
       activationConstraint: { distance: 6 },
@@ -137,42 +180,90 @@ export default function Projects() {
       coordinateGetter: sortableKeyboardCoordinates,
     })
   );
- 
-  const handleDragStart = (event: { active: { id: string | number } }) => {
+
+  const handleDragStart = (event: {
+    active: { id: string | number };
+  }) => {
     setActiveId(String(event.active.id));
   };
- 
+
   const handleDragEnd = (event: DragEndEvent) => {
     setActiveId(null);
+
     const { active, over } = event;
     if (!over || active.id === over.id) return;
- 
-    const oldIdx = projects.findIndex((p) => p.title === active.id);
-    const newIdx = projects.findIndex((p) => p.title === over.id);
-    const next   = arrayMove(projects, oldIdx, newIdx);
- 
-    setProjects(next);
-    saveOrder(next);
+
+    setProjects((prev) => {
+      const oldIdx = prev.findIndex((p) => p.title === active.id);
+      const newIdx = prev.findIndex((p) => p.title === over.id);
+
+      const next = arrayMove(prev, oldIdx, newIdx);
+      saveOrder(next);
+      return next;
+    });
+
     setIsReordered(true);
   };
- 
+
+  const handleMoveToTop = (title: string) => {
+    setProjects((prev) => {
+      const idx = prev.findIndex((p) => p.title === title);
+      if (idx <= 0) return prev;
+
+      const next = [
+        prev[idx],
+        ...prev.slice(0, idx),
+        ...prev.slice(idx + 1),
+      ];
+
+      saveOrder(next);
+      return next;
+    });
+
+    setIsReordered(true);
+    setToast(`"${title}" moved to top`);
+
+    setTimeout(() => {
+      setToast(null);
+    }, 2500);
+  };
+
   const resetOrder = () => {
     setProjects(DEFAULT_PROJECTS);
     localStorage.removeItem(LS_KEY);
     setIsReordered(false);
   };
- 
-  const activeProject = projects.find((p) => p.title === activeId);
- 
+
+  const activeProject = projects.find(
+    (p) => p.title === activeId
+  );
+
   return (
     <section
       className="relative w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
       style={{ backgroundColor: "#000000" }}
     >
-      <div className="absolute inset-0 bg-black/65" aria-hidden="true" />
- 
+      <div
+        className="absolute inset-0 bg-black/65"
+        aria-hidden="true"
+      />
+
+      <AnimatePresence>
+        {toast && (
+          <motion.div
+            key="toast"
+            initial={{ opacity: 0, y: 16, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 16, scale: 0.95 }}
+            transition={{ duration: 0.25 }}
+            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] flex items-center gap-2 bg-white text-black text-xs font-semibold px-4 py-2 rounded-full shadow-xl pointer-events-none"
+          >
+            ↑ {toast}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <div className="relative z-10 max-w-7xl mx-auto">
- 
         <div className="text-center mb-10 sm:mb-12 lg:mb-16">
           <motion.p
             className="text-xs tracking-[0.3em] uppercase text-white/40 font-mono mb-4"
@@ -183,7 +274,7 @@ export default function Projects() {
           >
             What I&apos;ve built
           </motion.p>
- 
+
           <motion.h2
             className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white leading-tight tracking-tight"
             variants={fadeUp(0.1)}
@@ -194,7 +285,7 @@ export default function Projects() {
             Featured Projects
           </motion.h2>
         </div>
- 
+
         <motion.div
           className="flex items-center justify-between mb-6"
           variants={fadeUp(0.2)}
@@ -202,8 +293,15 @@ export default function Projects() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          
- 
+          <p className="text-white/25 text-xs font-mono select-none">
+            <span className="hidden sm:inline">
+              
+            </span>
+            <span className="sm:hidden">
+              
+            </span>
+          </p>
+
           {isReordered && (
             <button
               onClick={resetOrder}
@@ -213,7 +311,7 @@ export default function Projects() {
             </button>
           )}
         </motion.div>
- 
+
         <DndContext
           sensors={sensors}
           collisionDetection={closestCenter}
@@ -230,15 +328,23 @@ export default function Projects() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.05 }}
               variants={{
-                hidden:  { opacity: 0 },
+                hidden: { opacity: 0 },
                 visible: {
                   opacity: 1,
-                  transition: { staggerChildren: reduced ? 0 : 0.08, delayChildren: reduced ? 0 : 0.2 },
+                  transition: {
+                    staggerChildren: reduced ? 0 : 0.08,
+                    delayChildren: reduced ? 0 : 0.2,
+                  },
                 },
               }}
             >
-              {projects.map((project) => (
-                <ProjectCard key={project.title} {...project} />
+              {projects.map((project, idx) => (
+                <ProjectCard
+                  key={project.title}
+                  {...project}
+                  onMoveToTop={handleMoveToTop}
+                  isPinned={idx === 0}
+                />
               ))}
             </motion.div>
           </SortableContext>
@@ -246,7 +352,11 @@ export default function Projects() {
           <DragOverlay
             dropAnimation={{
               sideEffects: defaultDropAnimationSideEffects({
-                styles: { active: { opacity: "0.4" } },
+                styles: {
+                  active: {
+                    opacity: "0.4",
+                  },
+                },
               }),
             }}
           >
@@ -257,7 +367,6 @@ export default function Projects() {
             ) : null}
           </DragOverlay>
         </DndContext>
- 
       </div>
     </section>
   );
