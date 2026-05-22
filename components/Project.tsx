@@ -44,83 +44,83 @@ const DEFAULT_PROJECTS: ProjectCardProps[] = [
     githubUrl: "https://github.com/sahayanshuman2005/Saasify-frontend",
     liveUrl: "https://saasify-frontend-next.vercel.app/",
   },
-  {
-    title: "SketchMate",
-    description:
-      "Developed a real-time collaborative whiteboard using Next.js, React, TypeScript, and Tailwind CSS. Enabled low-latency multi-user drawing with WebSockets, persisted board data in PostgreSQL, and structured the codebase as a monorepo with Turborepo.",
-    image: "/projects/devops-dashboard.jpg",
-    techStack: [
-      "Next.js",
-      "TailwindCSS",
-      "Websocket",
-      "TypeScript",
-      "Express",
-      "PostgreSQL",
-    ],
-    githubUrl: "https://github.com/sahayanshuman2005/SketchMate.git",
-    liveUrl: "https://devops-dashboard.vercel.app",
-  },
-  {
-    title: "Youtube University",
-    description:
-      "Built a full-stack e-learning platform where instructors can create and sell courses, and students can purchase, access, and track their learning progress.",
-    image: "/projects/saas-platform.jpg",
-    techStack: [
-      "MongoDB",
-      "Express",
-      "React",
-      "Node.js",
-      "Tailwind CSS",
-    ],
-    githubUrl: "https://github.com/sahayanshuman2005/Youtube-University.git",
-    liveUrl: "https://saas-platform.vercel.app",
-  },
+  // {
+  //   title: "SketchMate",
+  //   description:
+  //     "Developed a real-time collaborative whiteboard using Next.js, React, TypeScript, and Tailwind CSS. Enabled low-latency multi-user drawing with WebSockets, persisted board data in PostgreSQL, and structured the codebase as a monorepo with Turborepo.",
+  //   image: "/projects/devops-dashboard.jpg",
+  //   techStack: [
+  //     "Next.js",
+  //     "TailwindCSS",
+  //     "Websocket",
+  //     "TypeScript",
+  //     "Express",
+  //     "PostgreSQL",
+  //   ],
+  //   githubUrl: "https://github.com/sahayanshuman2005/SketchMate.git",
+  //   liveUrl: "https://devops-dashboard.vercel.app",
+  // },
+  // {
+  //   title: "Youtube University",
+  //   description:
+  //     "Built a full-stack e-learning platform where instructors can create and sell courses, and students can purchase, access, and track their learning progress.",
+  //   image: "/projects/saas-platform.jpg",
+  //   techStack: [
+  //     "MongoDB",
+  //     "Express",
+  //     "React",
+  //     "Node.js",
+  //     "Tailwind CSS",
+  //   ],
+  //   githubUrl: "https://github.com/sahayanshuman2005/Youtube-University.git",
+  //   liveUrl: "https://saas-platform.vercel.app",
+  // },
 
-  {
-    title: "BuddyBase",
-    description:
-      "Built a virtual collaboration platform where users can join interactive spaces, move as avatars, and connect through proximity-based video and chat, creating an immersive online environment for meetings, networking, and casual hangouts.",
-    image: "/projects/saas-platform.jpg",
-    techStack: [
-      "MongoDB",
-      "Express",
-      "React",
-      "Node.js",
-      "Tailwind CSS",
-    ],
-    githubUrl: "https://github.com/sahayanshuman2005/Youtube-University.git",
-    liveUrl: "https://saas-platform.vercel.app",
-  },
-  {
-    title: "Nova",
-    description:
-      "Built an AI-powered website builder that transforms natural language prompts into fully functional web applications. Developed with modern full-stack technologies to generate responsive interfaces, reusable components, and production-ready code in real time.",
-    image: "/projects/saas-platform.jpg",
-    techStack: [
-      "MongoDB",
-      "Express",
-      "React",
-      "Node.js",
-      "Tailwind CSS",
-    ],
-    githubUrl: "https://github.com/sahayanshuman2005/Youtube-University.git",
-    liveUrl: "https://saas-platform.vercel.app",
-  },
-  {
-    title: "ChitChat",
-    description:
-      "Built a real-time chat application that enables users to send instant messages, create conversations, and communicate seamlessly.",
-    image: "/projects/saas-platform.jpg",
-    techStack: [
-      "MongoDB",
-      "Express",
-      "React",
-      "Node.js",
-      "Tailwind CSS",
-    ],
-    githubUrl: "https://github.com/sahayanshuman2005/Youtube-University.git",
-    liveUrl: "https://saas-platform.vercel.app",
-  },
+  // {
+  //   title: "BuddyBase",
+  //   description:
+  //     "Built a virtual collaboration platform where users can join interactive spaces, move as avatars, and connect through proximity-based video and chat, creating an immersive online environment for meetings, networking, and casual hangouts.",
+  //   image: "/projects/saas-platform.jpg",
+  //   techStack: [
+  //     "MongoDB",
+  //     "Express",
+  //     "React",
+  //     "Node.js",
+  //     "Tailwind CSS",
+  //   ],
+  //   githubUrl: "https://github.com/sahayanshuman2005/Youtube-University.git",
+  //   liveUrl: "https://saas-platform.vercel.app",
+  // },
+  // {
+  //   title: "Nova",
+  //   description:
+  //     "Built an AI-powered website builder that transforms natural language prompts into fully functional web applications. Developed with modern full-stack technologies to generate responsive interfaces, reusable components, and production-ready code in real time.",
+  //   image: "/projects/saas-platform.jpg",
+  //   techStack: [
+  //     "MongoDB",
+  //     "Express",
+  //     "React",
+  //     "Node.js",
+  //     "Tailwind CSS",
+  //   ],
+  //   githubUrl: "https://github.com/sahayanshuman2005/Youtube-University.git",
+  //   liveUrl: "https://saas-platform.vercel.app",
+  // },
+  // {
+  //   title: "ChitChat",
+  //   description:
+  //     "Built a real-time chat application that enables users to send instant messages, create conversations, and communicate seamlessly.",
+  //   image: "/projects/saas-platform.jpg",
+  //   techStack: [
+  //     "MongoDB",
+  //     "Express",
+  //     "React",
+  //     "Node.js",
+  //     "Tailwind CSS",
+  //   ],
+  //   githubUrl: "https://github.com/sahayanshuman2005/Youtube-University.git",
+  //   liveUrl: "https://saas-platform.vercel.app",
+  // },
 ];
 
 const LS_KEY = "portfolio_projects_order";
