@@ -63,7 +63,7 @@ export default function Hero() {
         >
           <div className="relative overflow-hidden rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm shadow-xl">
             <video
-              // src="/my-video.mp4"
+              src="/my-video.mp4"
               autoPlay
               muted
               loop
@@ -90,12 +90,10 @@ export default function Hero() {
               sequence={[
                 "Full Stack Developer",
                 2000,
-                // "DevOps Architect",
-                // 2000,
-                // "Solana Rust Engineer",
-                // 2000,
-                // "dApp Builder",
-                // 2000,
+                "DevOps Engineer",
+                2000,
+                "Solana Rust Engineer",
+                2000,
               ]}
               wrapper="span"
               speed={50}

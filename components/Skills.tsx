@@ -2,7 +2,7 @@
 
 import { type Variants, motion, useReducedMotion } from "framer-motion";
 
-const LANGUAGES = ["C++", "JavaScript", "TypeScript", ];
+const LANGUAGES = ["C++", "JavaScript", "TypeScript","Rust","Golang" ];
 
 const TOOLS = [
   "React",
@@ -14,16 +14,16 @@ const TOOLS = [
   "PostgreSQL",
   "Prisma",
   "WebSockets",
-  // "Anchor",
-  // "AWS",
-  // "Docker",
-  // "Kubernetes",
-  // "CI/CD",
+  "Anchor",
+  "AWS",
+  "Docker",
+  "Kubernetes",
+  "CI/CD",
   "Git & Github",
-  // "Kafka",
-  // "Redis",
-  // "Prometheus",
-  // "Grafana",
+  "Kafka",
+  "Redis",
+  "Prometheus",
+  "Grafana",
 ];
 
 const fadeUp = (delay = 0): Variants => ({
