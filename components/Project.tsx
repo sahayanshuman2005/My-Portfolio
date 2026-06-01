@@ -7,6 +7,7 @@ import {
   useReducedMotion,
   AnimatePresence,
 } from "framer-motion";
+import ViewAllProjects from "./ViewAllProjects";
 import {
   DndContext,
   closestCenter,
@@ -349,15 +350,16 @@ export default function Projects() {
                 },
               }}
             >
-              {projects.map((project, idx) => (
-                <ProjectCard
-                  key={project.title}
-                  {...project}
-                  onMoveToTop={handleMoveToTop}
-                  isPinned={idx === 0}
-                />
+              {projects.slice(0, 6).map((project, idx) => (
+              <ProjectCard 
+              key={project.title}
+              {...project}
+              onMoveToTop={handleMoveToTop}
+              isPinned={idx === 0}
+              />
               ))}
             </motion.div>
+            <ViewAllProjects />
           </SortableContext>
 
           <DragOverlay
