@@ -2,26 +2,42 @@
 
 import { type Variants, motion, useReducedMotion } from "framer-motion";
 
-const LANGUAGES = ["C++", "JavaScript", "TypeScript","Rust","Golang" ];
+const LANGUAGES = [
+  "C++",
+  "JavaScript",
+  "TypeScript",
+  "Rust",
+  "Go",
+];
 
-const TOOLS = [
+const FRAMEWORKS = [
   "React",
   "Next.js",
-  "Express",
+  "React Native",
   "Node.js",
+  "Express",
   "Tailwind CSS",
+  "Anchor",
+];
+
+const DATABASES = [
   "MongoDB",
   "PostgreSQL",
+  "Redis",
   "Prisma",
-  "WebSockets",
-  "Anchor",
+];
+
+const DEVOPS = [
   "AWS",
   "Docker",
   "Kubernetes",
   "CI/CD",
-  "Git & Github",
+];
+
+const TOOLS = [
+  "Git & GitHub",
+  "WebSockets",
   "Kafka",
-  "Redis",
   "Prometheus",
   "Grafana",
 ];
@@ -145,7 +161,7 @@ function SkillGroup({
         {title}
       </motion.h3>
 
-      <div className="flex flex-wrap justify-center gap-3 max-w-4xl">
+      <div className="flex flex-wrap justify-center gap-3 max-w-5xl">
         {skills.map((skill, i) => (
           <motion.span
             key={skill}
@@ -246,8 +262,8 @@ export default function Skills() {
     <section
       className="
         relative w-full bg-black
-        py-1 px-4 sm:px-6 lg:px-8
-        overflow-hidden 
+        py-12 px-4 sm:px-6 lg:px-8
+        overflow-hidden
       "
     >
       <motion.div
@@ -260,7 +276,7 @@ export default function Skills() {
         animate={reduced ? undefined : "animate"}
       />
 
-      <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center gap-14">
+      <div className="relative z-10 max-w-6xl mx-auto flex flex-col items-center gap-14">
         <div className="text-center">
           <AnimatedBorderTitle reduced={reduced} />
         </div>
@@ -274,9 +290,30 @@ export default function Skills() {
           />
 
           <SkillGroup
-            title="Tools & Tech"
+            title="Frameworks & Libraries"
+            skills={FRAMEWORKS}
+            baseDelay={0.45}
+            reduced={reduced}
+          />
+
+          <SkillGroup
+            title="Databases & ORM"
+            skills={DATABASES}
+            baseDelay={0.6}
+            reduced={reduced}
+          />
+
+          <SkillGroup
+            title="Cloud & DevOps"
+            skills={DEVOPS}
+            baseDelay={0.75}
+            reduced={reduced}
+          />
+
+          <SkillGroup
+            title="Tools & Infrastructure"
             skills={TOOLS}
-            baseDelay={0.5}
+            baseDelay={0.9}
             reduced={reduced}
           />
         </div>
