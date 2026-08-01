@@ -45,6 +45,11 @@ const DEFAULT_PROJECTS: ProjectCardProps[] = [
     githubUrl: "https://github.com/sahayanshuman2005/Saasify-frontend",
     liveUrl: "https://saasify-frontend-next.vercel.app/",
   },
+  { title: "Shatranj", 
+    description: "Shatranj is a modern real-time multiplayer chess platform built with Next.js, TypeScript, Node.js, and WebSockets. It delivers low-latency gameplay, live matchmaking, and a responsive user interface, backed by a scalable architecture designed for real-time communication and future expansion with authentication, game history, and player ratings.", image: "/shatranj.png", 
+    techStack: [ "Next.js", "TypeScript", "React", "Tailwind CSS", "Node.js", "Express", "WebSockets", "chess.js" ], 
+    githubUrl: "https://github.com/sahayanshuman2005/Shatranj", 
+    liveUrl: "https://shatranj-x.vercel.app/" }
   // {
   //   title: "SketchMate",
   //   description:
