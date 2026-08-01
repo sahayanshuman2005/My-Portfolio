@@ -49,7 +49,25 @@ const DEFAULT_PROJECTS: ProjectCardProps[] = [
     description: "Shatranj is a modern real-time multiplayer chess platform built with Next.js, TypeScript, Node.js, and WebSockets. It delivers low-latency gameplay, live matchmaking, and a responsive user interface, backed by a scalable architecture designed for real-time communication and future expansion with authentication, game history, and player ratings.", image: "/shatranj.png", 
     techStack: [ "Next.js", "TypeScript", "React", "Tailwind CSS", "Node.js", "Express", "WebSockets", "chess.js" ], 
     githubUrl: "https://github.com/sahayanshuman2005/Shatranj", 
-    liveUrl: "https://shatranj-x.vercel.app/" }
+    liveUrl: "https://shatranj-x.vercel.app/" 
+  },
+  {
+  title: "iPhone 15 Pro",
+  description:
+    "An immersive Apple iPhone 15 Pro landing page recreation built with React, Three.js, React Three Fiber, and GSAP. The experience features interactive 3D product rendering, cinematic scroll animations, seamless transitions, responsive design, and a component-driven architecture optimized for performance and modern frontend development.",
+  image: "/iphone.png",
+  techStack: [
+    "React",
+    "Three.js",
+    "React Three Fiber",
+    "GSAP",
+    "Tailwind CSS",
+    "Vite"
+  ],
+  githubUrl: "https://github.com/sahayanshuman2005/i-phone-frontend",
+  liveUrl: "https://i-phone-frontend-15-pro.vercel.app/"
+}
+
   // {
   //   title: "SketchMate",
   //   description:
