@@ -38,30 +38,32 @@ export default function Hero() {
         items-center
         justify-center
         bg-black
-        px-4 sm:px-6 lg:px-8
+        px-3 xs:px-4 sm:px-6 lg:px-8
+        py-12 sm:py-0
         overflow-hidden
-        pt-4 sm:pt-0
       "
     >
       <div className="absolute inset-0 bg-black/40" />
 
       <motion.div
-        className="relative z-10 max-w-6xl mx-auto text-center"
+        className="relative z-10 w-full max-w-5xl mx-auto text-center"
         variants={containerVariants(reduced)}
         initial="hidden"
         animate="visible"
       >
         <motion.h1
           variants={itemVariants}
-          className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-4"
+          className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-4 tracking-tight"
         >
           Hi, I&apos;m Ansh
         </motion.h1>
+
+        {/* --- Video Wrapper --- */}
         <motion.div
           variants={itemVariants}
-          className="w-full max-w-[190px] sm:max-w-[180px] md:max-w-[260px] lg:max-w-[390px] mx-auto mb-3"
+          className="w-full max-w-[280px] xs:max-w-[320px] sm:max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto mb-6 px-1"
         >
-          <div className="relative overflow-hidden rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm shadow-xl">
+          <div className="relative w-full aspect-video overflow-hidden rounded-xl sm:rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm shadow-2xl">
             <video
               src="/my-video.mp4"
               autoPlay
@@ -69,13 +71,14 @@ export default function Hero() {
               loop
               playsInline
               preload="metadata"
-              className="w-full h-auto object-cover"
+              className="w-full h-full object-cover"
             />
           </div>
         </motion.div>
+
         <motion.div
           variants={itemVariants}
-          className="text-xl sm:text-2xl lg:text-3xl font-semibold leading-tight mb-2"
+          className="text-lg xs:text-xl sm:text-2xl lg:text-3xl font-semibold leading-tight mb-3"
           style={{
             background: "linear-gradient(90deg, #3B82F6, #8B5CF6)",
             WebkitBackgroundClip: "text",
@@ -102,9 +105,10 @@ export default function Hero() {
             />
           )}
         </motion.div>
+
         <motion.p
           variants={itemVariants}
-          className="text-base sm:text-lg lg:text-xl text-zinc-400 leading-relaxed max-w-3xl mx-auto"
+          className="text-sm xs:text-base sm:text-lg lg:text-xl text-zinc-400 leading-relaxed max-w-2xl mx-auto"
         >
           From modern SaaS platforms to decentralized applications, I turn ideas
           into production-ready products.
