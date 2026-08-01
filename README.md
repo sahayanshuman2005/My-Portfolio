@@ -1,36 +1,134 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Hi, I'm Anshuman Sahay
 
-## Getting Started
+Full-Stack Software Engineer passionate about building scalable web applications, real-time systems, and developer-focused products.
 
-First, run the development server:
+I enjoy designing software that is fast, reliable, and maintainable—from backend architecture to polished frontend experiences.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## About Me
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* Building production-ready full-stack applications
+* Interested in distributed systems, system design, and backend engineering
+* Learning Rust and exploring high-performance systems
+* Currently working on real-time collaborative applications
+* Open to Software Engineering internships and full-time opportunities
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Languages
 
-## Learn More
+* C++
+* TypeScript
+* JavaScript
+* Rust
+* Go
 
-To learn more about Next.js, take a look at the following resources:
+### Frontend
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* React
+* Next.js
+* Tailwind CSS
+* Framer Motion
+* Zustand
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Backend
 
-## Deploy on Vercel
+* Node.js
+* Express
+* WebSockets
+* REST APIs
+* JWT Authentication
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Databases
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* PostgreSQL
+* MongoDB
+* Prisma ORM
+* Redis
+
+### DevOps & Cloud
+
+* Docker
+* Kubernetes
+* AWS
+* GitHub Actions
+* Nginx
+
+### Tools
+
+* Git
+* Linux
+* Postman
+* VS Code
+
+## Featured Projects
+
+### Shatranj
+
+A production-style real-time multiplayer chess platform built with scalability in mind.
+
+**Highlights**
+
+* Real-time gameplay using WebSockets
+* Matchmaking system
+* Chess engine integration
+* Responsive Next.js frontend
+* Modular backend architecture
+* TypeScript across the entire stack
+* Optimized for deployment on Vercel
+
+**Tech**
+
+Next.js • React • TypeScript • WebSockets • Node.js • Express • chess.js
+
+---
+
+### Silate
+
+A collaborative whiteboard inspired by modern design tools.
+
+**Highlights**
+
+* Real-time drawing synchronization
+* Multiplayer collaboration
+* Low-latency updates
+* Clean canvas architecture
+* Extensible component system
+
+**Tech**
+
+Next.js • TypeScript • WebSockets • Canvas API • Express
+
+## What I'm Currently Learning
+
+* Advanced System Design
+* Distributed Systems
+* Rust
+* High-performance Backend Engineering
+* Cloud Infrastructure
+* Kubernetes
+
+## GitHub Stats
+
+<p align="center">
+  <img height="170" src="https://github-readme-stats.vercel.app/api?username=sahayanshuman2005&show_icons=true&theme=github_dark&hide_border=true" />
+  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=sahayanshuman2005&layout=compact&theme=github_dark&hide_border=true" />
+</p>
+
+<p align="center">
+  <img src="https://streak-stats.demolab.com?user=sahayanshuman2005&theme=github-dark&hide_border=true" />
+</p>
+
+## Connect With Me
+
+Portfolio: https://anshbuilds.in
+
+GitHub: https://github.com/sahayanshuman2005
+
+LinkedIn: https://www.linkedin.com/in/anshuman-sahay
+
+Email: [sahayanshuman421@gmail.com](mailto:sahayanshuman421@gmail.com)
+
+---
+
+> Building software that scales—from side projects to production systems.
+
