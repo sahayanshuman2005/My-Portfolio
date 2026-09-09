@@ -382,7 +382,7 @@ export default function Projects() {
               />
               ))}
             </motion.div>
-            <ViewAllProjects />
+            {/* <ViewAllProjects /> */}
           </SortableContext>
 
           <DragOverlay
